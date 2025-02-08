@@ -5,7 +5,7 @@ import serial
 app = Flask(__name__)
 
 # Initialize serial connection
-ser = serial.Serial('COM3', 115200, timeout=1)
+ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
 
 @app.route('/passCounts', methods=['POST'])
 def write_to_serial():
@@ -14,15 +14,13 @@ def write_to_serial():
             ser.open()
         # Get the JSON data from the POST request
         data = request.get_json()
+        print(data)
 
         if data and 'message' in data:
             # Extract the message from the JSON payload
             message = data['message']
             command = f"AT$APP msg {message}\r"
             ser.write(command.encode())
-            # ser.write(b'AT$APP msg tst\r')
-            
-
             response = ser.read(100)
 
             print(response.decode())
