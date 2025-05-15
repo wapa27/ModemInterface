@@ -1,12 +1,18 @@
 # Modem API
 
-## NOTE: 
-```
-In order to run the program, you will need to set up a python virtual environment with Flask and pyserial installed.
+To run, create virtual environment:
+`` python3 -m venv modemVenv ``
+
+Activate the virtual environment:
+`` source modemVenv/bin/activate ``
+
+Install dependencies:
+`` pip install flask pyserial ``
+
 For Windows, make sure to update COM3 to correct COM connection
 For Linux, make sure to update the COM to /dev/[usb]
 Change for USB (serial) device: read/write permissions - e.g. $sudo chmod a+rw /dev/ttyUSB0
-```
+
 ## Test Serial Port [Windows]
 ```
 Use Postman
