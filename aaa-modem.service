@@ -3,10 +3,10 @@ Description=Flask Application
 After=network.target
 
 [Service]
-WorkingDirectory=/home/wapa1274/Documents/ModemInterface
-ExecStart=/bin/bash -c 'source /home/wapa1274/Documents/ModemInterface/modemVenv/bin/activate && /home/wapa1274/Documents/ModemInterface/modemVenv/bin/python /home/wapa1274/Documents/ModemInterface/ModemApi.py'
+WorkingDirectory=/home/wapa/Documents/ModemInterface
+ExecStart=/bin/bash -c 'source /home/wapa/Documents/ModemInterface/modemVenv/bin/activate && /home/wapa/Documents/ModemInterface/modemVenv/bin/python /home/wapa/Documents/ModemInterface/ModemApi.py'
 Restart=always
-Environment=PATH=/home/wapa1274/Documents/ModemInterface/modemVenv/bin
+Environment=PATH=/home/wapa/Documents/ModemInterface/modemVenv/bin
 Environment=FLASK_APP=ModemApi.py
 StandardOutput=inherit
 StandardError=inherit
